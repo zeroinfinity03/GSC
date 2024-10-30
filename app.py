@@ -6,7 +6,7 @@ from datetime import datetime
 
 # Set page config with larger initial size
 st.set_page_config(
-    page_title="Graduate Success Center Analytics",
+    page_title="Graduate Studies Center Analytics",
     page_icon="📊",
     layout="wide",
     initial_sidebar_state="expanded"
