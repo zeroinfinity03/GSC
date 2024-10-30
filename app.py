@@ -47,7 +47,7 @@ def load_data():
 df = load_data()
 
 # Header with better spacing
-st.title("📊 Graduate Success Center Analytics Dashboard")
+st.title("📊 Graduate Studies Center Analytics Dashboard")
 st.markdown("---")
 
 # Sidebar filters with more options
