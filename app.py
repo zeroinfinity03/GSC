@@ -6,7 +6,7 @@ from datetime import datetime
 
 # Set page config with larger initial size
 st.set_page_config(
-    page_title="Graduate Studies Center Analytics",
+    page_title="Graduate Success Center Analytics",
     page_icon="📊",
     layout="wide",
     initial_sidebar_state="expanded"
@@ -41,13 +41,13 @@ st.markdown("""
 @st.cache_data
 def load_data():
     df = pd.read_csv("GSC cleaned.csv")
-    df['Date Time'] = pd.to_datetime(df['Date Time'])
+    df['Date Time'] = pd.to_datetime(df['Date Time'], format="%m/%d/%Y %I:%M %p")
     return df
 
 df = load_data()
 
 # Header with better spacing
-st.title("📊 Graduate Studies Center Analytics Dashboard")
+st.title("📊 Graduate Success Center Analytics Dashboard")
 st.markdown("---")
 
 # Sidebar filters with more options
@@ -162,7 +162,3 @@ if keyword_counts:
     st.plotly_chart(fig_keywords, use_container_width=True)
 
 st.markdown('</div>', unsafe_allow_html=True)
-
-# Show raw data in an expandable section
-with st.expander("Show Raw Data"):
-    st.dataframe(filtered_df, height=400)
